@@ -1,0 +1,32 @@
+{
+  "name": "com.santiago.chilebe",
+  "version": "1.0.0",
+  "description": "Backend para aplicación de análisis de niños. Trabajo de Universidad Santiago de Cali y Universidad Adventista de Chile.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/anfelbar/chileBE.git"
+  },
+  "author": "Andrés F. Barco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anfelbar/chileBE/issues"
+  },
+  "homepage": "https://github.com/anfelbar/chileBE#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase": "^7.14.3",
+    "firebase-admin": "^8.12.1",
+    "mongoose": "^5.9.5",
+    "swagger-ui-express": "^4.1.4"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2"
+  }
+}

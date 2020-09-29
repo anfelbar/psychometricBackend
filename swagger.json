@@ -1,0 +1,101 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "API para backend de aplicación Chile",
+      "description": "API para backend de aplicación Chile"
+      
+    },
+    "host": "localhost:4000",
+    "basePath": "/api/v1",
+    "tags": [
+      {
+        "name": "Users",
+        "description": "API for users in the system"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/estudiantes": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "Create new estudiante in system",
+          "parameters": [
+            {
+              "name": "estudiante",
+              "in": "body",
+              "description": "User that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Estudiante"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New estudiante is created",
+              "schema": {
+                "$ref": "#/definitions/Estudiante"
+              }
+            }
+          }
+        },
+        "get": {
+          "tags": [
+            "Estudiantes"
+          ],
+          "summary": "Get all estudiantes in system",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Estudiantes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Estudiante": {
+        "required": [
+          "nombres",
+          "apellidos",
+          "codigo",
+          "nacimiento"
+        ],
+        "properties": {
+          "codigo": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "nombres": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "apellidos": {
+            "type": "string"
+          },
+          "nacimiento": {
+            "type": "string"
+          }
+        }
+      },
+      "Estudiantes": {
+        "type": "array",
+        "$ref": "#/definitions/Estudiante"
+      }
+    }
+  }
